@@ -30,6 +30,18 @@ inputArray.map(x => {
 let summedArray = []
 groupedInputArray.map(y => { summedArray.push(y.reduce((acc, curr) => acc + curr, 0)); })
 
-// Find the max value using spread operator
-let highestCalorie = Math.max(...summedArray);
-console.log(highestCalorie);
+function solvePartOne() {
+   // Find the max value using spread operator
+   let highestCalorie = Math.max(...summedArray);
+   console.log(`Part One Solution: ${highestCalorie}`);
+}
+
+function solvePartTwo() {
+   // Find the max value using spread operator
+   let tempTopThree = summedArray.sort((a, b) => a - b).slice(-3)
+   let totalTopThree = tempTopThree.reduce((acc, curr) => acc + curr, 0)
+   console.log(`Part Two Solution: ${totalTopThree}`);;
+}
+
+solvePartOne()
+solvePartTwo()
