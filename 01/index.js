@@ -42,7 +42,7 @@ function solvePartOne() {
 
 // Solve Part Two Function
 function solvePartTwo() {
-   // Find the max value using spread operator
+   // Sort the summed array, slice off the 3 highest values, and add them
    let tempTopThree = summedArray.sort((a, b) => a - b).slice(-3)
    let totalTopThree = tempTopThree.reduce((acc, curr) => acc + curr, 0)
    console.log(`Part Two Solution: ${totalTopThree}`);;
