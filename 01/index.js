@@ -1,7 +1,8 @@
-// Imports
+
+/* ------------------ IMPORTS ------------------ */
 import { readFileSync } from 'node:fs';
 
-// Read input
+/* ------------------ READ INPUT ------------------ */
 const input = readFileSync("./input.txt", {encoding: "UTF-8"} );
 
 // Split input on newline
@@ -30,6 +31,8 @@ inputArray.map(x => {
 let summedArray = []
 groupedInputArray.map(y => { summedArray.push(y.reduce((acc, curr) => acc + curr, 0)); })
 
+/* ------------------ FUNCTIONS ------------------ */
+
 // Solve Part One Function
 function solvePartOne() {
    // Find the max value using spread operator
@@ -45,6 +48,6 @@ function solvePartTwo() {
    console.log(`Part Two Solution: ${totalTopThree}`);;
 }
 
-// Function Calls
+/* ------------------ FUNCTION CALLS ------------------ */
 solvePartOne()
 solvePartTwo()
