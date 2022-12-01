@@ -1,2 +1,2 @@
 # advent-of-code-2022
-Advent of code in JS
+🎄 Advent of code in JS

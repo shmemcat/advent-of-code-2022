@@ -1,0 +1,20 @@
+{
+   "name": "calorie-counting",
+   "version": "1.0.0",
+   "type": "module",
+   "description": "advent of code day 1",
+   "main": "index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/shmemcat/advent-of-code-2022.git"
+   },
+   "author": "etran",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/shmemcat/advent-of-code-2022/issues"
+   },
+   "homepage": "https://github.com/shmemcat/advent-of-code-2022#readme"
+}
