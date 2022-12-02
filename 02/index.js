@@ -13,21 +13,45 @@ import { readFileSync } from 'node:fs';
 const input = readFileSync("./input.txt", {encoding: "UTF-8"} );
 
 function calculatePointsPartOne(str) {
-   var tempPoints = 0;
-   if (str[0] === "A") { if(str[1] === "X") { tempPoints = 4 } else if(str[1] === "Y") { tempPoints = 8 } else { tempPoints = 3 }} 
-   else if (str[0] === "B") { if(str[1] === "X") { tempPoints = 1 } else if(str[1] === "Y") { tempPoints = 5 } else { tempPoints = 9 }} 
-   else if (str[0] === "C") { if(str[1] === "X") { tempPoints = 7 } else if(str[1] === "Y") { tempPoints = 2 } else { tempPoints = 6 }} 
- 
-   return tempPoints;
+   // Nested object mapping
+   return {
+      A: {
+         X: 4,
+         Y: 8,
+         Z: 3,
+      },
+      B: {
+         X: 1,
+         Y: 5,
+         Z: 9,
+      },
+      C: {
+         X: 7,
+         Y: 2,
+         Z: 6,
+      },
+   }[str[0]][str[1]]
 }
 
 function calculatePointsPartTwo(str) {
-   var tempPoints = 0;
-   if (str[0] === "A") { if(str[1] === "X") { tempPoints = 3 } else if(str[1] === "Y") { tempPoints = 4 } else { tempPoints = 8 }} 
-   else if (str[0] === "B") { if(str[1] === "X") { tempPoints = 1 } else if(str[1] === "Y") { tempPoints = 5 } else { tempPoints = 9 }} 
-   else if (str[0] === "C") { if(str[1] === "X") { tempPoints = 2 } else if(str[1] === "Y") { tempPoints = 6 } else { tempPoints = 7 }} 
- 
-   return tempPoints;
+   // Nested object mapping
+   return {
+      A: {
+         X: 3,
+         Y: 4,
+         Z: 8,
+      },
+      B: {
+         X: 1,
+         Y: 5,
+         Z: 9,
+      },
+      C: {
+         X: 2,
+         Y: 6,
+         Z: 7,
+      },
+   }[str[0]][str[1]]
 }
 
 // Split and group input
