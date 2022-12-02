@@ -2,14 +2,6 @@
 import { readFileSync } from 'node:fs';
 
 /* ------------------ READ INPUT ------------------ */
-
-// ROCK    : A, 1
-// PAPER   : B, 2
-// SCISSORS: C, 3
-// LOSE: 0, X
-// DRAW: 3, Y
-// WIN : 6, Z
-
 const input = readFileSync("./input.txt", {encoding: "UTF-8"} );
 
 function calculatePointsPartOne(str) {
