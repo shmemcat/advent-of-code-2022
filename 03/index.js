@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 /* ------------------ READ INPUT ------------------ */
 const input = readFileSync("./input.txt", {encoding: "UTF-8"} );
 
+// split input strings in half
 function halve(str) {
    let temp = [];
    temp.push(str.slice(0, str.length / 2));
@@ -11,62 +12,16 @@ function halve(str) {
    return temp;
 }
 
-function priorities(str) {
-   // object mapping
-   return {
-      "a": 1,
-      "b": 2,
-      "c": 3,
-      "d": 4,
-      "e": 5,
-      "f": 6,
-      "g": 7,
-      "h": 8,
-      "i": 9,
-      "j": 10,
-      "k": 11,
-      "l": 12,
-      "m": 13,
-      "n": 14,
-      "o": 15,
-      "p": 16,
-      "q": 17,
-      "r": 18,
-      "s": 19,
-      "t": 20,
-      "u": 21,
-      "v": 22,
-      "w": 23,
-      "x": 24,
-      "y": 25,
-      "z": 26,
-      "A": 27,
-      "B": 28,
-      "C": 29,
-      "D": 30,
-      "E": 31,
-      "F": 32,
-      "G": 33,
-      "H": 34,
-      "I": 35,
-      "J": 36,
-      "K": 37,
-      "L": 38,
-      "M": 39,
-      "N": 40,
-      "O": 41,
-      "P": 42,
-      "Q": 43,
-      "R": 44,
-      "S": 45,
-      "T": 46,
-      "U": 47,
-      "V": 48,
-      "W": 49,
-      "X": 50,
-      "Y": 51,
-      "Z": 52
-   }[str]
+// convert to ascii and offset to get value
+function getPriority(c) {
+   // if character is upper case, convert to ascii and subtract a offset
+   if(c == c.toUpperCase()) {
+      return (c.charCodeAt(0) - 38);
+   }
+   // else character is lower case, convert to ascii and subtract offset
+   else {
+      return (c.charCodeAt(0) - 96);
+   }
 }
 
 // convert each array into sets to find the intersection using filtering
@@ -91,7 +46,7 @@ function findIntersectionElfGroup(x) {
 function solvePartOne() {
    const inputGroups1 = input.split("\n").map(str => halve(str));  // Split and group input
    const filteredArray = inputGroups1.map(str => findIntersection(str));  // convert each array into sets to find the intersection using filtering
-   const totalPointsArray = filteredArray.map(str => priorities(str));  // use object mapping to assign a number value to each letter
+   const totalPointsArray = filteredArray.map(str => getPriority(str[0]));  // convert to ascii and offset to get value
    const totalPoints = totalPointsArray.reduce((acc, curr) => acc + curr, 0);  // add up all the values in the array
    
    console.log(`Part One Solution: ${totalPoints}`);
@@ -109,7 +64,7 @@ function solvePartTwo() {
    }
 
    const filteredElfGroupsArray = elfGroups.map(strGrp => findIntersectionElfGroup(strGrp));  // convert each array into sets to find the intersection using filtering
-   const totalPointsElvesArray = filteredElfGroupsArray.map(str => priorities(str));  // use object mapping to assign a number value to each letter
+   const totalPointsElvesArray = filteredElfGroupsArray.map(str => getPriority(str[0]));  // convert to ascii and offset to get value
    const totalPointsElves = totalPointsElvesArray.reduce((acc, curr) => acc + curr, 0);  // add up all the values in the array
 
    console.log(`Part Two Solution: ${totalPointsElves}`);
