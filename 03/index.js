@@ -24,19 +24,10 @@ function getPriority(c) {
    }
 }
 
-// convert each array into sets to find the intersection using filtering
-function findIntersection(x) {
-   var set1 = new Set(x[0]);
-   var set2 = new Set(x[1]);
-   var intersect = new Set([...set1].filter(i => set2.has(i)));
-   return [...intersect];
-}
-
-function findIntersectionElfGroup(x) {
-   var set1 = new Set(x[0]);
-   var set2 = new Set(x[1]);
-   var set3 = new Set(x[2]);
-   var intersect = [set1, set2, set3].reduce((a, b) => new Set([...a].filter(x => b.has(x))));
+// convert any number of arrays into sets to find the intersection using reduction and filtering
+function findIntersection(array) {
+   let setArray = array.map(x => new Set(x));
+   var intersect = setArray.reduce((a, b) => new Set([...a].filter(x => b.has(x))));
    return [...intersect];
 }
 
@@ -63,7 +54,7 @@ function solvePartTwo() {
       elfGroups.push(inputGroups2.slice(i, i + chunkSize));
    }
 
-   const filteredElfGroupsArray = elfGroups.map(strGrp => findIntersectionElfGroup(strGrp));  // convert each array into sets to find the intersection using filtering
+   const filteredElfGroupsArray = elfGroups.map(strGrp => findIntersection(strGrp));  // convert each array into sets to find the intersection using filtering
    const totalPointsElvesArray = filteredElfGroupsArray.map(str => getPriority(str[0]));  // convert to ascii and offset to get value
    const totalPointsElves = totalPointsElvesArray.reduce((acc, curr) => acc + curr, 0);  // add up all the values in the array
 
