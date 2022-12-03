@@ -1,5 +1,5 @@
 /* ------------------ IMPORTS ------------------ */
-import { readFileSync } from 'node:fs';
+import { readFileSync } from "node:fs";
 
 /* ------------------ READ INPUT ------------------ */
 const input = readFileSync("./input.txt", {encoding: "UTF-8"} );

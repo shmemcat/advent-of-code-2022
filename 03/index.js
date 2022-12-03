@@ -1,8 +1,8 @@
 /* ------------------ IMPORTS ------------------ */
-import { readFileSync } from 'node:fs';
+import { readFileSync } from "node:fs";
 
 /* ------------------ READ INPUT ------------------ */
-const input = readFileSync("./input.txt", {encoding: "UTF-8"} );
+const input = readFileSync("./input.txt", { encoding: "UTF-8" });
 
 // split input strings in half
 function halve(str) {
@@ -15,7 +15,7 @@ function halve(str) {
 // convert to ascii and offset to get value
 function getPriority(c) {
    // if character is upper case, convert to ascii and subtract a offset
-   if(c == c.toUpperCase()) {
+   if (c == c.toUpperCase()) {
       return (c.charCodeAt(0) - 38);
    }
    // else character is lower case, convert to ascii and subtract offset
@@ -39,7 +39,7 @@ function solvePartOne() {
    const filteredArray = inputGroups1.map(str => findIntersection(str));  // convert each array into sets to find the intersection using filtering
    const totalPointsArray = filteredArray.map(str => getPriority(str[0]));  // convert to ascii and offset to get value
    const totalPoints = totalPointsArray.reduce((acc, curr) => acc + curr, 0);  // add up all the values in the array
-   
+
    console.log(`Part One Solution: ${totalPoints}`);
 }
 
@@ -49,7 +49,7 @@ function solvePartTwo() {
 
    // group input every 3 lines
    const chunkSize = 3;
-   let elfGroups = []
+   let elfGroups = [];
    for (let i = 0; i < inputGroups2.length; i += chunkSize) {
       elfGroups.push(inputGroups2.slice(i, i + chunkSize));
    }
