@@ -47,24 +47,24 @@ function calculatePointsPartTwo(str) {
 }
 
 // Split and group input
-let inputGroups = input.split("\n").map(n => n.split(" "))
+let inputGroups = input.split("\n").map(n => n.split(" "));
 
 /* ------------------ FUNCTIONS ------------------ */
 
 // Solve Part One Function
 function solvePartOne() {
-   var arrayPoints = inputGroups.map(calculatePointsPartOne)
-   var totalPoints = arrayPoints.reduce((acc, curr) => acc + curr, 0)
+   var arrayPoints = inputGroups.map(calculatePointsPartOne);
+   var totalPoints = arrayPoints.reduce((acc, curr) => acc + curr, 0);
    console.log(`Part One Solution: ${totalPoints}`);
 }
 
 // Solve Part Two Function
 function solvePartTwo() {
-   var arrayPoints = inputGroups.map(calculatePointsPartTwo)
-   var totalPoints = arrayPoints.reduce((acc, curr) => acc + curr, 0)
+   var arrayPoints = inputGroups.map(calculatePointsPartTwo);
+   var totalPoints = arrayPoints.reduce((acc, curr) => acc + curr, 0);
    console.log(`Part Two Solution: ${totalPoints}`);
 }
 
 /* ------------------ FUNCTION CALLS ------------------ */
-solvePartOne()
-solvePartTwo()
+solvePartOne();
+solvePartTwo();
