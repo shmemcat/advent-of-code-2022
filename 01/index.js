@@ -8,7 +8,7 @@ const input = readFileSync("./input.txt", {encoding: "UTF-8"} );
 const inputSplit = input.split("\n\n")
 let inputGroups = []
 for(let i = 0; i < inputSplit.length; i++) {
-   inputGroups.push(inputSplit[i].split("\n"))
+   inputGroups.push(inputSplit[i].split("\n"));
 }
 
 // Convert strings to integers
@@ -33,11 +33,11 @@ function solvePartOne() {
 // Solve Part Two Function
 function solvePartTwo() {
    // Sort the summed array, slice off the 3 highest values, and add them
-   let tempTopThree = summedArray.sort((a, b) => a - b).slice(-3)
-   let totalTopThree = tempTopThree.reduce((acc, curr) => acc + curr, 0)
+   let tempTopThree = summedArray.sort((a, b) => a - b).slice(-3);
+   let totalTopThree = tempTopThree.reduce((acc, curr) => acc + curr, 0);
    console.log(`Part Two Solution: ${totalTopThree}`);
 }
 
 /* ------------------ FUNCTION CALLS ------------------ */
-solvePartOne()
-solvePartTwo()
+solvePartOne();
+solvePartTwo();
