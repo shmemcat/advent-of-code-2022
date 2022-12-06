@@ -29,7 +29,6 @@ function checkFourteenCharSeqs(str) {
       let marker = str.substring(i, i + 14);
       index++;
 
-      // check if any of the characters in the sequence are repeated
       if (!hasRepeats(marker)) { // if no repeats
          return index;
       }
