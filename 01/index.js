@@ -2,26 +2,28 @@
 import { readFileSync } from "node:fs";
 
 /* ------------------ READ INPUT ------------------ */
-const input = readFileSync("./input.txt", {encoding: "UTF-8"} );
+const input = readFileSync("./input.txt", { encoding: "UTF-8" });
+
+/* ------------------ PARSING ------------------ */
 
 // Split input on newline
-const inputSplit = input.split("\n\n")
-let inputGroups = []
-for(let i = 0; i < inputSplit.length; i++) {
+const inputSplit = input.split("\n\n");
+let inputGroups = [];
+for (let i = 0; i < inputSplit.length; i++) {
    inputGroups.push(inputSplit[i].split("\n"));
 }
 
 // Convert strings to integers
 let summedArray = [];
-for(let i = 0; i < inputGroups.length; i++) {
+for (let i = 0; i < inputGroups.length; i++) {
    let temp = 0;
-   for(let j = 0; j < inputGroups[i].length; j++) {
+   for (let j = 0; j < inputGroups[i].length; j++) {
       temp += parseInt(inputGroups[i][j]);
    }
    summedArray.push(temp);
 }
 
-/* ------------------ FUNCTIONS ------------------ */
+/* ------------------ SOLUTION FUNCTIONS ------------------ */
 
 // Solve Part One Function
 function solvePartOne() {

@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 /* ------------------ READ INPUT ------------------ */
 const input = readFileSync("./input.txt", { encoding: "UTF-8" });
 
+/* ------------------ DATA FUNCTIONS ------------------ */
 // split input strings in half
 function halve(str) {
    let temp = [];

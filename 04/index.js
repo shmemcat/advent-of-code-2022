@@ -4,9 +4,7 @@ import { readFileSync } from "node:fs";
 /* ------------------ READ INPUT ------------------ */
 const input = readFileSync("./input.txt", { encoding: "UTF-8" });
 
-// Split input in groups of pairs and parse into ints
-const inputGroups = input.split("\n").map(str => str.split(",").map(pair => pair.split("-").map(str => parseInt(str))));
-
+/* ------------------ DATA FUNCTIONS ------------------ */
 // takes two pairs and determines if either pair's range is fully contained within the other
 function doesRangeFullyContain(pairs) {
    const pairs1 = pairs[0];
@@ -53,7 +51,11 @@ function inRange(low, x, high) {
    }
 }
 
-/* ------------------ FUNCTIONS ------------------ */
+/* ------------------ PARSING ------------------ */
+// Split input in groups of pairs and parse into ints
+const inputGroups = input.split("\n").map(str => str.split(",").map(pair => pair.split("-").map(str => parseInt(str))));
+
+/* ------------------ SOLUTION FUNCTIONS ------------------ */
 
 // Solve Part One Function
 function solvePartOne() {

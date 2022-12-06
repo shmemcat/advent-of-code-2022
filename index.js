@@ -2,9 +2,13 @@
 import { readFileSync } from "node:fs";
 
 /* ------------------ READ INPUT ------------------ */
-const input = readFileSync("./input.txt", {encoding: "UTF-8"} );
+const input = readFileSync("./input.txt", { encoding: "UTF-8" });
 
-/* ------------------ FUNCTIONS ------------------ */
+/* ------------------ DATA FUNCTIONS ------------------ */
+
+/* ------------------ PARSING ------------------ */
+
+/* ------------------ SOLUTION FUNCTIONS ------------------ */
 
 // Solve Part One Function
 function solvePartOne() {

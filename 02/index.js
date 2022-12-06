@@ -2,8 +2,9 @@
 import { readFileSync } from "node:fs";
 
 /* ------------------ READ INPUT ------------------ */
-const input = readFileSync("./input.txt", {encoding: "UTF-8"} );
+const input = readFileSync("./input.txt", { encoding: "UTF-8" });
 
+/* ------------------ DATA FUNCTIONS ------------------ */
 function calculatePointsPartOne(str) {
    // Nested object mapping
    return {
@@ -22,7 +23,7 @@ function calculatePointsPartOne(str) {
          Y: 2,
          Z: 6,
       },
-   }[str[0]][str[1]]
+   }[str[0]][str[1]];
 }
 
 function calculatePointsPartTwo(str) {
@@ -43,13 +44,14 @@ function calculatePointsPartTwo(str) {
          Y: 6,
          Z: 7,
       },
-   }[str[0]][str[1]]
+   }[str[0]][str[1]];
 }
 
+/* ------------------ PARSING ------------------ */
 // Split and group input
 let inputGroups = input.split("\n").map(n => n.split(" "));
 
-/* ------------------ FUNCTIONS ------------------ */
+/* ------------------ SOLUTION FUNCTIONS ------------------ */
 
 // Solve Part One Function
 function solvePartOne() {
