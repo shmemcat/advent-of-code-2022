@@ -28,7 +28,7 @@ function checkFourteenCharSeqs(str) {
    let index = 13; // keep track of where the marker occurs after processing
    // iterate over the characters of the string
    for (let i = 0; i < str.length - 13; i++) {
-      // extract a four-character sequence from the string
+      // extract a fourteen-character sequence from the string
       let marker = str.substring(i, i + 14);
       index++; // add one to the marker counter
 
